@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css" />
+    <title>Online Portfolio</title>
+  </head>
+  <body>
+    <nav id="navbar" class="nav">
+      <ul class="nav-list">
+        <li>
+          <a href="#welcome-section">Home</a>
+        </li>
+        <li>
+          <a href="#projects">Projects</a> 
+        </li>
+        <li>
+          <a href="#aboutus">About Us</a> 
+        </li>
+        <li>
+          <a href="#contact">Contact</a>
+        </li>
+      </ul>
+      
+    </nav>    
+
+    <section id="welcome-section" class="welcome-section">
+      <h1 class="intro">Hi! We are CC1 - 1R A</h1>
+      <p>a group of IT students</p>
+    </section>
+
+    <section id="projects" class="projects-section">
+      <h2 class="projects-section-header">Projects:</h2>
+      <div class="projects-grid">
+                       
+        <a href="project/Wiki.html" target="_blank" class="project project-tile">
+          <img
+            class="project-image"
+            src="images/flexbox.png"
+            alt="project"
+          />
+          <p class="project-title">
+            <span class="code">&lt;</span>
+            Portfolio Work: (Doraemon Wiki)
+            <span class="code">&#47;&gt;</span>
+          </p>
+        </a>
+        <a href="project/Wiki.html" target="_blank" class="project project-tile">
+          <img
+            class="project-image"
+            src="images/flexbox.png"
+            alt="project"
+          />
+          <p class="project-title">
+            <span class="code">&lt;</span>
+            Portfolio Work: (Doraemon Wiki)
+            <span class="code">&#47;&gt;</span>
+          </p>
+        </a>
+      </div>
+    </section>
+
+        <section id="aboutus" class="projects-section">
+          <h2 class="projects-section-header">About us:</h2>
+          <div class="projects-grid">
+            <a href="project/resume.html" target="_blank" class="project project-tile">
+              <img
+                class="project-image"
+                src="images/resume.png"
+                alt="project"
+              />
+                <p class="project-title">
+                  <span class="code">&lt;</span>
+                  Full Resume
+                  <span class="code">&#47;&gt;</span>
+                </p>
+            </a>
+            <a href="project/skills.html" target="_blank" class="project project-tile">
+              <img
+                class="project-image"
+                src="images/skills.png"
+                alt="project"
+              />
+              <p class="project-title">
+                <span class="code">&lt;</span>
+                 Resume: (Skills)
+                <span class="code">&#47;&gt;</span>
+              </p>
+            </a>
+    		<a href="project/interests-hobbies.html" target="_blank" class="project project-tile">
+              <img
+                class="project-image"
+                src="images/hobby.png"
+                alt="project"
+              />
+            <p class="project-title">
+              <span class="code">&lt;</span>
+              Resume: (Interests & Hobbies)
+              <span class="code">&#47;&gt;</span>
+            </p>
+            </a>                
+            
+          </div>
+        </section>
+
+    <section id="contact" class="contact-section">
+      <div class="contact-section-header">
+        <h2>You can contact us...</h2>
+        <p>Want to work together?</p>
+      </div>
+      <div class="contact-links">
+        <a
+          href="https://www.facebook.com/UCjaguars/"
+          target="_blank"
+          class="btn contact-details"
+          >Facebook</a>
+        <a
+          href="https://twitter.com"
+          target="_blank"
+          class="btn contact-details"
+          >Twitter</a>
+        <a 
+          href="https://mail.google.com/mail/u/0/#inbox?compose=new" 
+          target="_blank"
+          class="btn contact-details">Send a mail</a>
+      </div>
+    <footer>
+      <p> &copy; Rushed by CC1 - 1R A</p>
+    </footer>
+    
+    <script>
+      // Function to scroll smoothly
+      function scrollToSection(targetId) {
+        const targetSection = document.getElementById(targetId);
+        if (targetSection) {
+          targetSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+
+      document.querySelectorAll('.nav-list a').forEach(link => {
+        link.addEventListener('click', function(event) {
+          event.preventDefault();
+          const targetId = this.getAttribute('href').substring(1); 
+          scrollToSection(targetId);
+        });
+      });
+
+      // Theme toggle button functionality
+      const themeToggle = document.getElementById('theme-toggle');
+      const root = document.documentElement;
+
+      themeToggle.addEventListener('click', function() {
+          const blueRed = generateRandomColor();
+          const red = blueRed.red;
+          const green = blueRed.green;
+          const blue = blueRed.blue;
+          const blueColor = `rgb(${red},${green},${blue})`;
+
+          const redRed = generateRandomColor();
+          const red2 = redRed.red;
+          const green2 = redRed.green;
+          const blue2 = redRed.blue;
+          const redColor = `rgb(${red2},${green2},${blue2})`;
+
+          root.style.setProperty('--main-blue', blueColor);
+          root.style.setProperty('--main-red', redColor);
+      });
+
+      function generateRandomColor() {
+          const red = Math.floor(Math.random() * 256); 
+          const green = Math.floor(Math.random() * 256); 
+          const blue = Math.floor(Math.random() * 256); 
+          return { red, green, blue };
+      }
+    </script>
+  </body>
+</html>
